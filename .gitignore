@@ -1,0 +1,31 @@
+# Arquivos/diretórios de ambiente virtual
+venv/
+.env/
+*.pyc
+__pycache__/
+
+# Configurações do editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+
+# Arquivos de credenciais
+.env
+secrets.json
+
+# Dependências e builds
+dist/
+build/
+*.egg-info/
+pip-wheel-metadata/
+
+# Arquivo de banco de dados SQLite (se for usado)
+*.sqlite3
