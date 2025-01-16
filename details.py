@@ -22,18 +22,8 @@ if not dados.empty:
 else:
     st.error("Nenhum dado encontrado no banco de dados.")
 
-# col1, col2, col3 = st.columns(3)
-
-# with col1:
-#     st.header("Data")
-#     st.write(dados["Data"])
- 
-
-# with col2:
-#     st.header("Contratos")
-#     st.write(dados["Contratos"])
-
-# with col3:
-#     st.header("Nomes dos Responsaveis")
-#     st.write(dados["Nome"])
-
+with st.expander("See explanation"):
+    st.write('''
+        Testando as funcionalidades
+    ''')
+    st.image("https://static.streamlit.io/examples/dice.jpg")

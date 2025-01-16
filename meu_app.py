@@ -17,7 +17,7 @@ def carregar_dados():
 
 with st.container():
     st.subheader("Meu primeiro site")
-    st.title("Dashboard de contratos")
+    st.title("Dashboards de contratos")
     st.write("Informações sobre os contratos pela Empresa ao longo de maio")
     st.write("Para conhecer mais sobre o Streamlit? [Clique aqui](https://docs.streamlit.io/)")
 
@@ -36,5 +36,7 @@ with st.container():
         st.write("Exibindo todos os dados")
 
     st.line_chart(dados, x="Data", y="Contratos")
+    st.bar_chart(dados, x="Data", y="Contratos")
 
-st.write("Detalhar mais os dados do gráfico [Clique aqui](.\details.py)")
+
+
