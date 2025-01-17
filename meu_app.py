@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 st.set_page_config(
     page_title="Meu site"
@@ -18,25 +17,22 @@ def carregar_dados():
 with st.container():
     st.subheader("Meu primeiro site")
     st.title("Dashboards de contratos")
-    st.write("Informações sobre os contratos pela Empresa ao longo de maio")
+    st.write("Informações sobre os contratos")
     st.write("Para conhecer mais sobre o Streamlit? [Clique aqui](https://docs.streamlit.io/)")
 
 with st.container():
     st.write("---")
 
     #Botão de selecionar
-    qtde_dias = st.selectbox("Selecione o periodo", ["All", "7D", "15D", "21D", "30D"])
+    qtde_dias = st.selectbox("Selecione o periodo (em dias)", ["All", "7D", "15D", "21D", "30D"])
 
     dados = carregar_dados()
 
     if qtde_dias != "All":
         num = int(qtde_dias.replace("D", ""))
-        dados = dados[-num:] # o "-" para ele pegar de trás pra frente, e os : para pegar todos os 7,15, e assim por diante
-    else:
-        st.write("Exibindo todos os dados")
+        dados = dados[-num:] # o "-" para ele pegar de trás pra frente, por exemplo, dia 16 até 30, e os : para pegar todos os 7,15, e assim por diante
 
     st.line_chart(dados, x="Data", y="Contratos")
-    st.bar_chart(dados, x="Data", y="Contratos")
 
 
 
