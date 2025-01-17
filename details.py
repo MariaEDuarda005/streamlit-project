@@ -24,7 +24,16 @@ def carregar_dados():
 
     return dados
 
+@st.cache_data(ttl=600)
+def testes_dados():
+    query = "SELECT Nome, SUM(Contratos) AS Total_Contratos FROM resultados.informacao GROUP BY Nome ORDER BY Total_Contratos DESC;"
+    dados = conn.query(query)
+    return dados
+
+dados_db = testes_dados()
 dados = carregar_dados()
+
+print(f"teste {dados_db}")
 
 # Verificar se os dados foram carregados corretamente
 if not dados.empty:
@@ -62,11 +71,11 @@ with st.container():
             st.write(f"{row['Nome']}: {row['Contratos']} contratos")
 
         maior_responsavel = soma_contratos.iloc[0]
-        st.write(f"A pessoa com mais contratos no mês de março é {maior_responsavel['Nome']} com {maior_responsavel['Contratos']} contratos.")
+        st.write(f"A pessoa com mais contratos no maio de maio é {maior_responsavel['Nome']} com {maior_responsavel['Contratos']} contratos.")
    
 
 with st.expander("See explanation"):
     st.write('''
         Testando as funcionalidades
     ''')
-    st.image("https://static.streamlit.io/examples/dice.jpg")
+    st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwHiXR7sNdqkx6k6f74_rl2hgAJvmfaoc0sA&s")
